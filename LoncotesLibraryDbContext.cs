@@ -17,7 +17,6 @@ public class LoncotesLibraryDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        // Seed Material Types
         modelBuilder.Entity<MaterialType>().HasData(new MaterialType[]
         {
         new MaterialType { Id = 1, Name = "Book", CheckoutDays = 14 },
@@ -27,7 +26,6 @@ public class LoncotesLibraryDbContext : DbContext
         new MaterialType { Id = 5, Name = "Audiobook", CheckoutDays = 14 }
         });
 
-        // Seed Genres
         modelBuilder.Entity<Genre>().HasData(new Genre[]
         {
         new Genre { Id = 1, Name = "Mystery" },
@@ -39,7 +37,6 @@ public class LoncotesLibraryDbContext : DbContext
         new Genre { Id = 7, Name = "Self-Help" }
         });
 
-        // Seed Patrons
         modelBuilder.Entity<Patron>().HasData(new Patron[]
         {
         new Patron { Id = 1, FirstName = "Tim", LastName = "Compton", Address = "2266 East Eand Circle Portland TN 37456", Email = "tc@gmail.com", IsActive = true },
@@ -48,7 +45,6 @@ public class LoncotesLibraryDbContext : DbContext
         new Patron { Id = 4, FirstName = "Emily", LastName = "Davis", Address = "456 Pine Road Franklin TN 37064", Email = "emily.davis@email.com", IsActive = false }
         });
 
-        // Seed Materials
         modelBuilder.Entity<Material>().HasData(new Material[]
         {
         new Material { Id = 1, MaterialName = "The Hound of the Baskervilles", MaterialTypeId = 1, GenreId = 1, OutOfCirculationSince = null },
@@ -68,7 +64,6 @@ public class LoncotesLibraryDbContext : DbContext
         new Material { Id = 15, MaterialName = "Becoming by Michelle Obama", MaterialTypeId = 5, GenreId = 5, OutOfCirculationSince = null }
         });
 
-        // Seed Checkouts
         modelBuilder.Entity<Checkout>().HasData(new Checkout[]
         {
         new Checkout { Id = 1, MaterialId = 1, PatronId = 1, CheckoutDate = new DateTime(2024, 9, 1), ReturnDate = new DateTime(2024, 9, 10) },

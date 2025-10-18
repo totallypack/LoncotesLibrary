@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dotnet run:*)",
+      "Bash(curl:*)",
+      "Read(//c/Users/total/workspace/csharp/**)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

@@ -26,7 +26,7 @@ builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(policy =>
     {
-        policy.WithOrigins("http://localhost:5173", "http://localhost:3000")
+        policy.WithOrigins("http://localhost:5173", "http://localhost:3000", "http://localhost:5053")
               .AllowAnyMethod()
               .AllowAnyHeader();
     });
@@ -40,9 +40,9 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
 }
 
-app.UseCors();
-
 app.UseHttpsRedirection();
+
+app.UseCors();
 
 // Get all circulating Materials with Genre and MaterialType
 // Optional query parameters: materialTypeId, genreId
